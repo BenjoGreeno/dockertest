@@ -15,6 +15,7 @@ RUN adduser -D ${USER}
 
 WORKDIR /home/$USER
 #test blah blah
+#test 2
 USER $USER
 
 CMD ["help"]
