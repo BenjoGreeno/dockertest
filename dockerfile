@@ -4,7 +4,7 @@ ARG USER
 
 RUN set -x                            && \
     apk add --no-cache                   \
-        python                           \
+        python3                           \
         groff                            \
         less                             \
         py-pip                        && \
