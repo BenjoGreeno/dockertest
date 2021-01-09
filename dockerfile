@@ -14,7 +14,7 @@ RUN set -x                            && \
 RUN adduser -D ${USER}
 
 WORKDIR /home/$USER
-
+#test blah blah
 USER $USER
 
 CMD ["help"]
