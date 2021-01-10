@@ -8,4 +8,5 @@ RUN apt-get update                              && \
 
 ENV PATH "$PATH:/usr/games"
 
-CMD ["cowsay", "I am trapped in a cow-nsole"]
+# CMD ["cowsay", "I am trapped in a cow-nsole"]
+ENTRYPOINT ["cowsay"]
