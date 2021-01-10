@@ -1,23 +1,12 @@
-FROM alpine:latest 
+FROM debian:jessie-slim
 
-ARG USER
+RUN apt-get update                              && \
+    apt-get install -y --no-install-recommends     \
+        cowsay                                     \
+        screenfetch                             && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN set -x                            && \
-    apk add --no-cache                   \
-        python3                           \
-        groff                            \
-        less                             \
-        py-pip                        && \
-    pip --no-cache-dir install awscli && \
-    apk del py-pip
+ENV PATH "$PATH:/usr/games"
 
-RUN adduser -D ${USER}
-
-WORKDIR /home/$USER
-#test blah blah
-#test 2
-USER $USER
-
-CMD ["help"]
-ENTRYPOINT ["aws"]
-
+# CMD ["cowsay", "I am trapped in a cow-nsole"]
+ENTRYPOINT ["cowsay"]
